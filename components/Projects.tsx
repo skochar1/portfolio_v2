@@ -70,15 +70,6 @@ export function Projects() {
       github: "#",
       demo: "https://www.marvelprogram.com",
       type: "Educational Platform"
-    },
-    {
-      title: "Microsoft Azure Anomaly Detection",
-      description: "Built anomaly detecting models for subscription data using Azure and KQL. Created PowerBI reports and set up incident alerting systems for renewal failure analysis.",
-      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop",
-      technologies: ["Azure", "KQL", "PowerBI", "C#", ".NET Core", "Anomaly Detection"],
-      github: "#",
-      demo: "#",
-      type: "Industry Project"
     }
   ];
 

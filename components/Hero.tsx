@@ -86,7 +86,7 @@ export function Hero() {
             <Button 
               variant="outline" 
               size="lg"
-              onClick={() => window.open('https://drive.google.com/file/d/1vKtpboS8eCnAHSoQ_PH5IdOdoibD0vaa/view?usp=drive_link', '_blank')}
+              onClick={() => window.open('https://drive.google.com/file/d/1hmF6IccvTbaRTzB7JdTos67oHGpoHYoI/view?usp=drive_linkhttps://drive.google.com/file/d/1hmF6IccvTbaRTzB7JdTos67oHGpoHYoI/view?usp=drive_link', '_blank')}
               className="border-soft-purple-200 text-soft-purple-500 hover:bg-soft-purple-50 hover:border-soft-purple-300 transition-all duration-300"
             >
               <Download className="mr-2 h-4 w-4" />
