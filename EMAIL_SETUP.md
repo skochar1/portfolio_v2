@@ -1,66 +1,107 @@
-# Email Contact Form Setup
+# 📧 Email Contact Form Setup Guide
 
-This portfolio includes a functional email contact form using EmailJS. To enable email functionality, follow these steps:
+This portfolio includes a functional email contact form using EmailJS. Follow these steps to set up email functionality:
 
-## 1. Create EmailJS Account
-1. Go to [EmailJS](https://www.emailjs.com/) and create a free account
-2. Create a new email service (Gmail, Outlook, etc.)
-3. Create an email template
-4. Get your Service ID, Template ID, and Public Key
+## 🚀 Quick Setup (5 minutes)
 
-## 2. Configure the Contact Form
-In `/components/Contact.tsx`, replace the placeholder values:
+### Step 1: Create EmailJS Account
+1. Go to [EmailJS.com](https://www.emailjs.com/) and create a **free account**
+2. Verify your email address
 
-```typescript
-// Replace these values with your actual EmailJS credentials
-emailjs.init("YOUR_PUBLIC_KEY"); // Your EmailJS public key
+### Step 2: Set Up Email Service
+1. In EmailJS dashboard, go to **"Email Services"**
+2. Click **"Add New Service"**
+3. Choose your email provider (Gmail recommended):
+   - **Gmail**: Connect your Gmail account
+   - **Outlook**: Connect your Outlook account
+   - **Other**: Follow provider-specific setup
+4. **Copy the Service ID** (e.g., `service_abc123`)
 
-const result = await emailjs.send(
-  "YOUR_SERVICE_ID",    // Your EmailJS service ID
-  "YOUR_TEMPLATE_ID",   // Your EmailJS template ID
-  {
-    from_name: formData.name,
-    from_email: formData.email,
-    subject: formData.subject,
-    message: formData.message,
-    to_email: 'shreya.kochar@columbia.edu'
-  }
-);
+### Step 3: Create Email Template
+1. Go to **"Email Templates"**
+2. Click **"Create New Template"**
+3. **Template Settings**:
+   - **Template Name**: "Contact Form"
+   - **Subject**: `New message from {{from_name}} - {{subject}}`
+   - **Content**: 
+   ```
+   Hello Shreya,
+
+   You received a new message from your portfolio contact form:
+
+   From: {{from_name}} ({{from_email}})
+   Subject: {{subject}}
+
+   Message:
+   {{message}}
+
+   Best regards,
+   Your Portfolio Contact Form
+   ```
+4. **Copy the Template ID** (e.g., `template_xyz789`)
+
+### Step 4: Get Public Key
+1. Go to **"Account"** in EmailJS dashboard
+2. Find **"Public Key"** section
+3. **Copy your Public Key** (e.g., `abcdefghijk123`)
+
+### Step 5: Configure Environment Variables
+1. Create a `.env.local` file in your project root:
+```bash
+# EmailJS Configuration
+VITE_EMAILJS_SERVICE_ID=your_service_id_here
+VITE_EMAILJS_TEMPLATE_ID=your_template_id_here  
+VITE_EMAILJS_PUBLIC_KEY=your_public_key_here
 ```
 
-## 3. EmailJS Template Variables
-Make sure your EmailJS template includes these variables:
-- `{{from_name}}` - Sender's name
-- `{{from_email}}` - Sender's email
-- `{{subject}}` - Email subject
-- `{{message}}` - Email message content
-- `{{to_email}}` - Recipient email (shreya.kochar@columbia.edu)
+2. Replace the placeholder values with your actual IDs from steps 2-4
 
-## 4. Environment Variables (Recommended)
-For better security, store your EmailJS credentials in environment variables:
+### Step 6: Test the Form
+1. **Restart your dev server**: `npm run dev`
+2. **Navigate to the contact section** on your site
+3. **Fill out and submit the test form**
+4. **Check your email** - you should receive the message!
 
-1. Create a `.env.local` file in the project root
-2. Add your credentials:
-```
-VITE_EMAILJS_SERVICE_ID=your_service_id
-VITE_EMAILJS_TEMPLATE_ID=your_template_id
-VITE_EMAILJS_PUBLIC_KEY=your_public_key
-```
+## 🔧 Troubleshooting
 
-3. Update the Contact component to use environment variables:
-```typescript
-emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+### Form not sending emails?
+- ✅ Check that all environment variables are set correctly
+- ✅ Restart the development server after adding `.env.local`
+- ✅ Verify your EmailJS service is connected and active
+- ✅ Check browser console for error messages
 
-const result = await emailjs.send(
-  import.meta.env.VITE_EMAILJS_SERVICE_ID,
-  import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-  // ... template data
-);
-```
+### Environment variables not working?
+- ✅ Make sure `.env.local` is in the project root (same level as `package.json`)
+- ✅ Restart the development server (`npm run dev`)
+- ✅ Variables must start with `VITE_` for Vite to recognize them
 
-## 5. Test the Form
-1. Install dependencies: `npm install`
-2. Start the development server: `npm run dev`
-3. Navigate to the contact section and test the form
+### Gmail/Email service issues?
+- ✅ Enable 2-factor authentication on your Gmail account
+- ✅ Generate an app-specific password if using Gmail
+- ✅ Check EmailJS service status in dashboard
 
-The form will show success/error messages and disable the submit button while sending.
+## 📝 Template Variables Reference
+Your EmailJS template can use these variables:
+- `{{from_name}}` - Sender's name from the form
+- `{{from_email}}` - Sender's email address
+- `{{subject}}` - Email subject from the form
+- `{{message}}` - Message content from the form
+- `{{to_email}}` - Your email (shreya.kochar@columbia.edu)
+
+## 🔒 Security Notes
+- ✅ Never commit `.env.local` to Git (it's already in `.gitignore`)
+- ✅ Use environment variables for all sensitive data
+- ✅ EmailJS public key is safe to use client-side
+- ✅ The form includes basic validation and error handling
+
+## 🎯 Expected Behavior
+When everything is set up correctly:
+- ✅ Form shows "Sending..." when submitting
+- ✅ Success message appears when email is sent
+- ✅ Form fields clear after successful submission
+- ✅ Error message shown if something goes wrong
+- ✅ You receive emails at shreya.kochar@columbia.edu
+
+---
+
+**Need help?** Check the [EmailJS Documentation](https://www.emailjs.com/docs/) or feel free to reach out!
