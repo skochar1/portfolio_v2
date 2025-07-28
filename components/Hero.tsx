@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from './ui/button';
-import { ArrowDown, Download, Github, Linkedin, Heart, Star, Sparkles, Flower2, Butterfly, Coffee } from 'lucide-react';
+import { ArrowDown, Download, Github, Linkedin, Heart, Star, Sparkles, Flower2, Coffee } from 'lucide-react';
 
 export function Hero() {
   const scrollToAbout = () => {
@@ -13,7 +13,7 @@ export function Hero() {
     { Icon: Star, x: '85%', y: '15%', delay: 0.5 },
     { Icon: Sparkles, x: '15%', y: '70%', delay: 1 },
     { Icon: Flower2, x: '90%', y: '60%', delay: 1.5 },
-    { Icon: Butterfly, x: '20%', y: '40%', delay: 2 },
+    { Icon: Coffee, x: '20%', y: '40%', delay: 2 },
     { Icon: Coffee, x: '80%', y: '80%', delay: 2.5 },
     { Icon: Heart, x: '70%', y: '25%', delay: 3 },
     { Icon: Star, x: '25%', y: '85%', delay: 3.5 },
@@ -21,7 +21,7 @@ export function Hero() {
   ];
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-baby-pink-50 via-rose-gold-50 to-lavender-50">
+    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-white">
       {/* Cute background icons */}
       {backgroundIcons.map((item, index) => (
         <motion.div
@@ -41,7 +41,7 @@ export function Hero() {
             repeatType: "reverse"
           }}
         >
-          <item.Icon size={40} className="text-baby-pink-400" />
+          <item.Icon size={40} className="text-soft-purple-300" />
         </motion.div>
       ))}
       
@@ -78,7 +78,7 @@ export function Hero() {
             <Button 
               size="lg" 
               onClick={scrollToAbout}
-              className="bg-gradient-to-r from-baby-pink-400 to-rose-gold-400 hover:from-baby-pink-500 hover:to-rose-gold-500 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-soft-purple-200 hover:bg-soft-purple-300 text-soft-purple-800 border-0 shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <Sparkles className="mr-2 h-4 w-4" />
               View My Work
@@ -87,7 +87,7 @@ export function Hero() {
               variant="outline" 
               size="lg"
               onClick={() => window.open('https://drive.google.com/file/d/1vKtpboS8eCnAHSoQ_PH5IdOdoibD0vaa/view?usp=drive_link', '_blank')}
-              className="border-baby-pink-300 text-baby-pink-600 hover:bg-baby-pink-50 hover:border-baby-pink-400 transition-all duration-300"
+              className="border-soft-purple-200 text-soft-purple-500 hover:bg-soft-purple-50 hover:border-soft-purple-300 transition-all duration-300"
             >
               <Download className="mr-2 h-4 w-4" />
               View CV
@@ -105,7 +105,7 @@ export function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2, rotate: 5 }}
-              className="p-3 rounded-full bg-white/60 backdrop-blur-sm text-baby-pink-600 hover:text-baby-pink-700 hover:bg-white/80 transition-all duration-300 shadow-md hover:shadow-lg"
+              className="p-3 rounded-full bg-soft-purple-50 text-soft-purple-600 hover:text-soft-purple-700 hover:bg-soft-purple-100 transition-all duration-300 shadow-md hover:shadow-lg"
             >
               <Github size={20} />
             </motion.a>
@@ -114,7 +114,7 @@ export function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2, rotate: -5 }}
-              className="p-3 rounded-full bg-white/60 backdrop-blur-sm text-baby-pink-600 hover:text-baby-pink-700 hover:bg-white/80 transition-all duration-300 shadow-md hover:shadow-lg"
+              className="p-3 rounded-full bg-soft-purple-50 text-soft-purple-600 hover:text-soft-purple-700 hover:bg-soft-purple-100 transition-all duration-300 shadow-md hover:shadow-lg"
             >
               <Linkedin size={20} />
             </motion.a>
@@ -133,9 +133,9 @@ export function Hero() {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="p-2 rounded-full bg-white/60 backdrop-blur-sm shadow-md"
+          className="p-2 rounded-full bg-soft-purple-50 shadow-md"
         >
-          <ArrowDown className="text-baby-pink-600" size={20} />
+          <ArrowDown className="text-soft-purple-600" size={20} />
         </motion.div>
       </motion.div>
     </section>

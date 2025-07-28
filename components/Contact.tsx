@@ -5,7 +5,7 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { Label } from './ui/label';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Github, Linkedin } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 
 export function Contact() {
@@ -25,12 +25,20 @@ export function Contact() {
     setSubmitStatus('idle');
 
     try {
-      // Initialize EmailJS (you'll need to replace these with actual values)
-      emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
+      // Initialize EmailJS with environment variable
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+
+      if (!publicKey || !serviceId || !templateId) {
+        throw new Error('EmailJS configuration is missing. Please check your environment variables.');
+      }
+
+      emailjs.init(publicKey);
       
       const result = await emailjs.send(
-        "YOUR_SERVICE_ID", // Replace with your EmailJS service ID
-        "YOUR_TEMPLATE_ID", // Replace with your EmailJS template ID
+        serviceId,
+        templateId,
         {
           from_name: formData.name,
           from_email: formData.email,

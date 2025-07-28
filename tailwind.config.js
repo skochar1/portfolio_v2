@@ -52,42 +52,30 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Baby pink color palette
-        'baby-pink': {
-          50: '#fdf2f8',
-          100: '#fce7f3',
-          200: '#fbcfe8',
-          300: '#f9a8d4',
-          400: '#f472b6',
-          500: '#ec4899',
-          600: '#db2777',
-          700: '#be185d',
-          800: '#9d174d',
-          900: '#831843',
+        // Soft purple/pink color palette
+        'soft-purple': {
+          50: '#fdeaf4',   // Lightest based on FDEAF4
+          100: '#ffc6e8',  // FFC6E8
+          200: '#e9d5fa',  // E9D5FA  
+          300: '#dcb0e1',  // DCB0E1
+          400: '#c084cc',
+          500: '#a855b8',
+          600: '#9333a1',
+          700: '#7e1d8a',
+          800: '#691873',
+          900: '#541360',
         },
-        'rose-gold': {
-          50: '#fdf2f2',
-          100: '#fce8e8',
-          200: '#f9d5d5',
-          300: '#f5b5b5',
-          400: '#ef8989',
-          500: '#e85d5d',
-          600: '#d13a3a',
-          700: '#b02a2a',
-          800: '#932727',
-          900: '#7a2626',
-        },
-        'lavender': {
-          50: '#f8f7ff',
-          100: '#f1efff',
-          200: '#e6e2ff',
-          300: '#d2c9ff',
-          400: '#b8a7ff',
-          500: '#9c7eff',
-          600: '#8a5cf6',
-          700: '#7c3aed',
-          800: '#6b21a8',
-          900: '#581c87',
+        'accent-pink': {
+          50: '#fdeaf4',
+          100: '#ffc6e8', 
+          200: '#ffb3e3',
+          300: '#ff9ade',
+          400: '#ff81d9',
+          500: '#ff68d4',
+          600: '#e64fc7',
+          700: '#cc36ba',
+          800: '#b31dad',
+          900: '#9904a0',
         }
       },
       borderRadius: {

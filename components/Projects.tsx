@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
-import { Github, ExternalLink, Play } from 'lucide-react';
+import { Github, Play } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
 export function Projects() {
