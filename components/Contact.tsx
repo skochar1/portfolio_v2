@@ -74,12 +74,6 @@ export function Contact() {
       href: "mailto:shreya.kochar@columbia.edu"
     },
     {
-      icon: Phone,
-      label: "Phone",
-      value: "510-386-0022",
-      href: "tel:+15103860022"
-    },
-    {
       icon: MapPin,
       label: "Location",
       value: "Chicago, IL / New York, NY",

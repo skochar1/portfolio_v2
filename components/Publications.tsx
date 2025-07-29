@@ -10,7 +10,7 @@ export function Publications() {
   const publications = [
     {
       title: "Predictive Privacy: Masters Dissertation",
-      authors: ["Shreya Kochar"],
+      authors: ["S. Kochar"],
       journal: "Columbia Academic Commons",
       year: "2025",
       impact: "Master's Thesis",
@@ -20,7 +20,7 @@ export function Publications() {
     },
     {
       title: "Beyond Creepiness: Predictive Privacy",
-      authors: ["Shreya Kochar", "Steven M. Bellovin"],
+      authors: ["S. Kochar", "S. M. Bellovin"],
       journal: "Privacy Law Scholars Conference (PLSC) 2025",
       year: "2025",
       impact: "Law Review Article - Accepted for Presentation",
@@ -30,7 +30,7 @@ export function Publications() {
     },
     {
       title: "Voice-Cloning AI: Understanding Legal Implications Using the Voiceprint Definition",
-      authors: ["Shreya Kochar"],
+      authors: ["S. Kochar", "D. Murphy", "R. Rodriguez", "A. Wijaya", "S. Bellovin", "A. Abdo"],
       journal: "Legal Research Paper",
       year: "2024",
       impact: "Legal Framework Research",
@@ -60,7 +60,7 @@ export function Publications() {
     },
     {
       title: "The Pile: US State Analysis - Designing Probes to Analyze GPT-J Predictions",
-      authors: ["Shreya Kochar"],
+      authors: ["S. Kochar"],
       journal: "Research Project",
       year: "2023",
       impact: "Technical Research",
@@ -82,7 +82,7 @@ export function Publications() {
         >
           <h2 className="text-3xl md:text-4xl mb-4">Publications</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Research contributions published in top-tier journals and conferences
+            Research contributions across various journals and conferences
           </p>
         </motion.div>
 
